@@ -76,10 +76,10 @@
     transition: transform var(--transition-slow);
 }
 
-.galleryMain:hover .galleryImage,
+/* .galleryMain:hover .galleryImage,
 .gallerySecondary:hover .galleryImage {
     transform: scale(1.04);
-}
+} */
 
 /* Subtle overlay on hover */
 .galleryMain::after,
@@ -109,10 +109,10 @@
     transition: box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
-.card:hover {
+/* .card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-3px);
-}
+} */
 
 .cardIcon {
     width: 44px;

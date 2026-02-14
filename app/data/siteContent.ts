@@ -193,15 +193,15 @@ export const ourOffice = {
   ],
   images: [
     {
-      src: "/grow/faq.webp",
+      src: "/grow/Dr. Maya Reynolds.png",
       alt: "Cozy therapy office with warm lighting",
     },
     {
-      src: "/grow/therapist.jpg",
+      src: "/grow/office1.jpeg",
       alt: "Comfortable seating area in the counseling space",
     },
     {
-      src: "/grow/2 main.jpg",
+      src: "/grow/office2.jpeg",
       alt: "Calm, natural-light-filled office environment",
     },
   ],
