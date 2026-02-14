@@ -1,18 +1,17 @@
 import styles from './CTA.module.css';
+import { ctaSection } from '@/app/data/siteContent';
 
 export default function CTA() {
   return (
-    <section className={styles.cta} data-theme="dark">
+    <section id="contact" className={styles.cta} data-theme="dark">
       <div className={styles.container}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Get started today.</h2>
+          <h2 className={styles.title}>{ctaSection.title}</h2>
           <p className={styles.description}>
-            Taking the first step can feel overwhelming, but it&apos;s also 
-            incredibly brave. Whether you&apos;re ready for a free consultation 
-            or just want more information, I&apos;m here to support you.
+            {ctaSection.description}
           </p>
-          <a href="#contact" className={styles.button}>
-            Book a Free Consultation
+          <a href={ctaSection.buttonLink} className={styles.button}>
+            {ctaSection.buttonText}
           </a>
         </div>
       </div>

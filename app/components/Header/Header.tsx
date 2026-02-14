@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { siteInfo, navigation } from "@/app/data/siteContent";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,18 +13,17 @@ const Header = () => {
       <div className={styles.headerInner}>
         {/* Logo */}
         <div className={styles.logo}>
-          <Link href="/">Lilac Template</Link>
+          <Link href="/">{siteInfo.name}</Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/contact">Contact</Link>
-            </li>
+            {navigation.mainLinks.map((link) => (
+              <li key={link.label} className={styles.navItem}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -42,16 +42,13 @@ const Header = () => {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
         <nav className={styles.mobileNav}>
           <ul className={styles.mobileNavList}>
-            <li>
-              <Link href="/blog" onClick={() => setMenuOpen(false)}>
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" onClick={() => setMenuOpen(false)}>
-                Contact
-              </Link>
-            </li>
+            {navigation.mainLinks.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href} onClick={() => setMenuOpen(false)}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

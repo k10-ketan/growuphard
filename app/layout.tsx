@@ -4,8 +4,8 @@ import "./styles/base.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lilac Template | Therapy for Adults in Minneapolis, MN",
-  description: "Individual therapy services for adults in Minneapolis, Minnesota. Specializing in self-esteem, relationships, and burnout.",
+  title: "Dr. Maya Reynolds, PsyD | Clinical Psychologist Santa Monica, CA",
+  description: "Licensed Clinical Psychologist in Santa Monica, CA. Specializing in anxiety, trauma, and burnout. In-person and telehealth therapy for adults throughout California.",
 };
 
 export default function RootLayout({

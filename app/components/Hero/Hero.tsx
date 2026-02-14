@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css";
 import Link from "next/link";
+import { heroContent } from "@/app/data/siteContent";
 
 const Hero = () => {
   return (
@@ -9,10 +10,9 @@ const Hero = () => {
           {/* Image with Arch Mask */}
           <div className={styles.imageWrapper}>
             <div className={styles.archMask}>
-              {/* Hero Image - Replace with your own */}
               <img
-                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80"
-                alt="Flowers in bloom"
+                src={heroContent.image}
+                alt={heroContent.imageAlt}
                 className={styles.heroImage}
               />
             </div>
@@ -21,14 +21,13 @@ const Hero = () => {
           {/* Content */}
           <div className={styles.content}>
             <h1 className={styles.title}>
-              Live your life <br />
-              in full bloom
+              {heroContent.title}
             </h1>
             <p className={styles.subtitle}>
-              Therapy for Adults in Minneapolis, MN.
+              {heroContent.subtitle}
             </p>
-            <Link href="/contact" className={styles.btn}>
-              Connect with me
+            <Link href={heroContent.ctaLink} className={styles.btn}>
+              {heroContent.ctaText}
             </Link>
           </div>
         </div>

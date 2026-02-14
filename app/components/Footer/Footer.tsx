@@ -1,12 +1,5 @@
 import styles from './Footer.module.css';
-
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
-];
+import { contact, navigation, siteInfo } from '@/app/data/siteContent';
 
 export default function Footer() {
   return (
@@ -16,15 +9,15 @@ export default function Footer() {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Contact</h3>
             <address className={styles.address}>
-              <p>123 Example Road</p>
-              <p>Minneapolis, MN 55401</p>
+              <p>{contact.address.street}</p>
+              <p>{contact.address.city}, {contact.address.state} {contact.address.zip}</p>
             </address>
             <div className={styles.contactInfo}>
-              <a href="mailto:email@example.com" className={styles.link}>
-                email@example.com
+              <a href={`mailto:${contact.email}`} className={styles.link}>
+                {contact.email}
               </a>
-              <a href="tel:+15555555555" className={styles.link}>
-                (555) 555-5555
+              <a href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`} className={styles.link}>
+                {contact.phone}
               </a>
             </div>
           </div>
@@ -32,15 +25,15 @@ export default function Footer() {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Hours</h3>
             <div className={styles.hours}>
-              <p>Monday – Friday</p>
-              <p>10:00am – 6:00pm</p>
+              <p>{contact.hours.days}</p>
+              <p>{contact.hours.time}</p>
             </div>
           </div>
 
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Navigation</h3>
             <nav className={styles.nav}>
-              {navLinks.map((link) => (
+              {navigation.footerLinks.map((link) => (
                 <a key={link.label} href={link.href} className={styles.navLink}>
                   {link.label}
                 </a>
@@ -51,7 +44,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Lilac Template. All rights reserved.
+            © {new Date().getFullYear()} {siteInfo.fullTitle}. All rights reserved.
           </p>
         </div>
       </div>
