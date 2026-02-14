@@ -1,0 +1,127 @@
+.background {
+  background-color: var(--color-light);
+  padding: 6.6vmax var(--site-gutter);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.imageColumn {
+  position: relative;
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.contentColumn {
+  padding-left: 20px;
+}
+
+.title {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.accordion {
+  width: 100%;
+}
+
+.accordionItem {
+  border-bottom: 1px solid rgba(92, 74, 61, 0.2);
+}
+
+.accordionItem:first-child {
+  border-top: 1px solid rgba(92, 74, 61, 0.2);
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordionTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  padding-right: 20px;
+}
+
+.accordionIcon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordionText {
+  padding-bottom: 22px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .background {
+    padding: var(--space-3xl) var(--mobile-gutter);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageColumn {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .contentColumn {
+    padding-left: 0;
+  }
+}
