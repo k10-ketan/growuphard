@@ -1,11 +1,31 @@
+/* Background — sand-to-deep-to-rose gradient with decorative shape */
+
 .background {
-  background-color: var(--color-secondary);
-  padding: 7vmax var(--site-gutter);
+  background: var(--bg-background);
+  padding: var(--section-pad) var(--site-gutter);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft organic shape — top left */
+.background::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -12%;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -24,6 +44,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 200px 200px 0 0;
+  box-shadow: var(--shadow-lg);
 }
 
 .image {
@@ -40,7 +61,7 @@
 .title {
   font-size: clamp(1.8rem, 2.5vw, 2.2rem);
   font-weight: 400;
-  color: var(--color-accent);
+  color: var(--text-heading);
   margin-bottom: 40px;
   line-height: 1.2;
 }
@@ -50,11 +71,11 @@
 }
 
 .accordionItem {
-  border-bottom: 1px solid rgba(109, 104, 117, 0.2);
+  border-bottom: 1px solid var(--accent-border);
 }
 
 .accordionItem:first-child {
-  border-top: 1px solid rgba(109, 104, 117, 0.2);
+  border-top: 1px solid var(--accent-border);
 }
 
 .accordionHeader {
@@ -67,19 +88,25 @@
   border: none;
   cursor: pointer;
   text-align: left;
+  transition: all var(--transition-fast);
 }
 
 .accordionTitle {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--text-heading);
   padding-right: 20px;
+  transition: color var(--transition-fast);
+}
+
+.accordionHeader:hover .accordionTitle {
+  color: var(--color-primary-dark);
 }
 
 .accordionIcon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  color: var(--color-accent);
+  color: var(--color-primary);
   flex-shrink: 0;
   width: 24px;
   text-align: center;
@@ -88,18 +115,17 @@
 .accordionContent {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.35s var(--ease);
 }
 
 .accordionText {
   padding-bottom: 22px;
   font-size: 0.95rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 991px) {
   .grid {
     gap: 50px;

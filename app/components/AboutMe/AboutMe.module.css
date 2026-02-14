@@ -1,12 +1,31 @@
+/* AboutMe — warm-to-sand-to-rose gradient with decorative shape */
+
 .aboutMe {
-  background-color: var(--color-secondary);
-  padding: 7vmax var(--site-gutter);
+  background: var(--bg-aboutme);
+  padding: var(--section-pad) var(--site-gutter);
   overflow: hidden;
+  position: relative;
+}
+
+/* Large soft circle — gives organic feel */
+.aboutMe::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -12%;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -36,6 +55,7 @@
   padding-bottom: 140%;
   overflow: hidden;
   border-radius: 200px 200px 0 0;
+  box-shadow: var(--shadow-lg);
 }
 
 .archImage {
@@ -62,7 +82,8 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
-  border: 6px solid var(--color-secondary);
+  border: 6px solid var(--color-sand-deep);
+  box-shadow: var(--shadow-lg);
 }
 
 .circleImage {
@@ -82,7 +103,7 @@
 .title {
   font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 400;
-  color: var(--color-accent);
+  color: var(--text-heading);
   margin-bottom: 30px;
   line-height: 1.15;
 }
@@ -94,7 +115,7 @@
 .text p {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: 20px;
 }
 
@@ -104,16 +125,23 @@
 
 .button {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 0.95rem 2.4rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
 }
 
-/* Responsive */
+.button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-rose);
+}
+
 @media (max-width: 991px) {
   .grid {
     gap: 60px;

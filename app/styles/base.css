@@ -1,11 +1,10 @@
 /* ==========================================
-   BASE STYLES
-   Professional, clean styling
+   BASE STYLES — Unified Design Language
    ========================================== */
 
 @import "./variables.css";
 
-/* Reset & Base */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -24,17 +23,22 @@ body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
-  color: var(--text-primary);
-  background-color: var(--color-secondary);
+  color: var(--text-body);
+  background-color: var(--color-warm);
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* ========== Typography ========== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-heading);
   font-weight: 400;
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-md);
-  color: var(--color-accent);
+  color: var(--text-heading);
 }
 
 h1 {
@@ -65,7 +69,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -83,7 +88,7 @@ button {
   background: none;
 }
 
-/* Utility Classes */
+/* ========== Container ========== */
 .container {
   width: 100%;
   max-width: var(--container-max-width);
@@ -97,68 +102,34 @@ button {
   }
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-/* Section Base Styles */
+/* ========== Section Base ========== */
 .section {
   position: relative;
   width: 100%;
-  padding: var(--space-3xl) 0;
+  padding: var(--section-pad) 0;
 }
 
-.section--small {
-  min-height: var(--section-height-small);
-}
-
-.section--medium {
-  min-height: var(--section-height-medium);
-}
-
-.section--large {
-  min-height: var(--section-height-large);
-}
-
-/* Theme Backgrounds */
-.theme-white {
-  background-color: var(--color-white);
-  color: var(--text-primary);
-}
-
-.theme-light {
-  background-color: var(--color-light);
-  color: var(--text-primary);
-}
-
-.theme-bright {
-  background-color: var(--color-bright);
-  color: var(--text-primary);
-}
-
-.theme-dark {
-  background-color: var(--color-dark);
-  color: var(--text-light);
-}
-
-/* Button Styles - Clean, Professional */
+/* ========== Unified Button ========== */
+/* Every button across the site uses the SAME style */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
+  padding: 0.95rem 2.4rem;
   font-size: var(--font-size-sm);
   font-weight: 500;
-  letter-spacing: 0.08em;
-  min-width: 180px;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn--primary {
@@ -167,22 +138,36 @@ button {
   border: none;
 }
 
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-rose);
+}
+
 .btn--secondary {
   background-color: transparent;
-  color: var(--color-accent);
-  border: 1px solid var(--color-accent);
+  color: var(--text-heading);
+  border: 1.5px solid var(--accent-border);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .btn--light {
   background-color: var(--color-white);
-  color: var(--color-accent);
+  color: var(--text-heading);
   border: none;
 }
 
-/* Image Masks */
+.btn--light:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Arch Image Mask (used across Hero, Support, AboutMe) ========== */
 .mask-arch {
-  clip-path: ellipse(50% 33% at 50% 33%);
-  clip-path: url(#archMask);
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
 }
 
 .mask-circle {
@@ -190,7 +175,7 @@ button {
   overflow: hidden;
 }
 
-/* Grid System */
+/* ========== Grid System ========== */
 .grid {
   display: grid;
   gap: var(--space-lg);
@@ -205,17 +190,20 @@ button {
 }
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3 {
+
+  .grid-2,
+  .grid-3 {
     grid-template-columns: 1fr;
   }
 }
 
-/* Animation Classes */
+/* ========== Animations ========== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -223,10 +211,10 @@ button {
 }
 
 .animate-fade-in {
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeInUp 0.8s var(--ease) forwards;
 }
 
-/* Visually Hidden (for accessibility) */
+/* Accessibility */
 .visually-hidden {
   position: absolute;
   width: 1px;

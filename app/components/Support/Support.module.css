@@ -1,11 +1,18 @@
+/* Support — THE bold accent section (rose gradient) */
+/* This is the ONE intentional color break in the page flow */
+
 .support {
-  background-color: var(--color-primary);
-  padding: 7vmax var(--site-gutter);
+  background: var(--gradient-rose);
+  padding: var(--section-pad) var(--site-gutter);
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -22,7 +29,7 @@
 .title {
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--text-light);
   margin-bottom: 30px;
   line-height: 1.25;
 }
@@ -30,7 +37,7 @@
 .intro {
   font-size: 1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-light-muted);
   margin-bottom: 30px;
 }
 
@@ -46,7 +53,7 @@
   margin-bottom: 14px;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-light-muted);
 }
 
 .listItem::before {
@@ -54,9 +61,9 @@
   position: absolute;
   left: 0;
   top: 10px;
-  width: 6px;
-  height: 6px;
-  background-color: var(--color-white);
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
 }
 
@@ -71,6 +78,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 200px 200px 0 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .image {
@@ -83,7 +91,6 @@
   object-position: center;
 }
 
-/* Responsive */
 @media (max-width: 991px) {
   .grid {
     gap: 60px;

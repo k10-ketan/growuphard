@@ -1,41 +1,81 @@
 /* ==========================================
    THEME CONFIGURATION
-   Edit these colors to customize your site
    ==========================================
-   Primary: Dusty Rose
-   Secondary: Cream
-   Accent: Muted Plum
+   Design Philosophy: ONE continuous warm canvas.
+   Sections are separated by content, not clashing colors.
+   Only two "accent" breaks in the page flow:
+     1. Support section → Rich Rose
+     2. CTA + Footer → Deep Dark
+   Everything else lives on the same warm base.
    ========================================== */
 
 :root {
   /* ========== BRAND COLORS ========== */
-  --color-primary: #D8A7B1;        /* Dusty Rose - Main brand color */
-  --color-secondary: #FFF8E7;      /* Cream - Light backgrounds */
-  --color-accent: #6D6875;         /* Muted Plum - Accents & text */
+  --color-primary: #C9929E;
+  /* Rich Rose */
+  --color-secondary: #FAF6F0;
+  /* Warm Linen (main canvas) */
+  --color-accent: #5B5662;
+  /* Deep Plum - Headings & strong text */
 
   /* ========== DERIVED COLORS ========== */
-  --color-primary-dark: #c4939d;   /* Darker dusty rose */
-  --color-primary-light: #e8c5cc;  /* Lighter dusty rose */
+  --color-primary-dark: #B07D88;
+  /* Deeper rose - hovers */
+  --color-primary-light: #EDDADF;
+  /* Very soft rose tint */
+  --color-primary-mist: rgba(201, 146, 158, 0.07);
+  /* Rose mist for subtle bg */
 
-  /* ========== BACKGROUND COLORS ========== */
+  /* ========== BACKGROUND PALETTE ========== */
   --color-white: #ffffff;
-  --color-light: #FFF8E7;          /* Cream */
-  --color-bright: #f5ede0;         /* Warm off-white */
-  --color-dark: #6D6875;           /* Muted Plum */
-  --color-black: #2d2a32;          /* Deep plum-black */
+  --color-warm: #FAF6F0;
+  /* Warm Linen */
+  --color-sand: #F4EEE5;
+  /* Warm Sand */
+  --color-sand-deep: #EDE6DB;
+  /* Deeper sand */
+  --color-rose-mist: #F2E4E8;
+  /* Soft rose tint */
+  --color-rose-mist-light: #F7ECF0;
+  /* Very light rose */
+
+  /* Dark palette */
+  --color-dark: #5B5662;
+  /* Plum */
+  --color-darker: #3A3540;
+  /* Deep plum */
+  --color-darkest: #2B2633;
+  /* Near-black plum */
 
   /* ========== TEXT COLORS ========== */
-  --text-primary: #6D6875;         /* Muted Plum - Main text */
-  --text-secondary: #8a8490;       /* Lighter plum */
-  --text-muted: #a9a5ae;           /* Muted text */
-  --text-light: #ffffff;           /* Light text on dark bg */
+  --text-heading: #3A3540;
+  /* Strong, deep — for all headings */
+  --text-body: #5B5662;
+  /* Body copy */
+  --text-muted: #8E8895;
+  /* Lighter secondary */
+  --text-light: #ffffff;
+  /* On dark backgrounds */
+  --text-light-muted: rgba(255, 255, 255, 0.75);
 
-  /* ========== ACCENT COLORS ========== */
-  --accent-rose: #D8A7B1;          /* Dusty Rose */
-  --accent-cream: #FFF8E7;         /* Cream */
-  --accent-plum: #6D6875;          /* Muted Plum */
+  /* ========== ACCENT TOKENS ========== */
+  --accent-border: rgba(201, 146, 158, 0.18);
+  --accent-border-hover: rgba(201, 146, 158, 0.35);
 
-  /* Spacing */
+  /* ========== GRADIENTS ========== */
+  --gradient-hero: linear-gradient(168deg, #FAF6F0 0%, #F4EEE5 45%, #EDDADF 100%);
+  --gradient-rose: linear-gradient(145deg, #C9929E 0%, #B07D88 40%, #7A6A76 100%);
+  --gradient-dark: linear-gradient(168deg, #5B5662 0%, #3A3540 50%, #2B2633 100%);
+
+  /* Section-specific gradients — same family, unique combos */
+  --bg-about: linear-gradient(175deg, #ffffff 0%, #FAF6F0 60%, #F7ECF0 100%);
+  --bg-specialties: linear-gradient(160deg, #F4EEE5 0%, #FAF6F0 40%, #F2E4E8 100%);
+  --bg-aboutme: linear-gradient(170deg, #FAF6F0 0%, #EDE6DB 50%, #F7ECF0 100%);
+  --bg-faq: linear-gradient(165deg, #ffffff 0%, #FAF6F0 55%, #F4EEE5 100%);
+  --bg-background: linear-gradient(155deg, #F4EEE5 0%, #EDE6DB 45%, #F2E4E8 100%);
+  --bg-office: linear-gradient(172deg, #FAF6F0 0%, #F4EEE5 40%, #EDDADF 100%);
+
+  /* ========== SPACING ========== */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -44,23 +84,18 @@
   --space-2xl: 4rem;
   --space-3xl: 6rem;
 
-  /* Container */
+  /* ========== CONTAINER ========== */
   --container-max-width: 1500px;
   --site-gutter: 4vw;
   --mobile-gutter: 6vw;
 
-  /* Section Heights */
-  --section-height-small: 50vh;
-  --section-height-medium: 70vh;
-  --section-height-large: 90vh;
+  /* ========== SECTION RHYTHM ========== */
+  --section-pad: 7vmax;
 
   /* ========== TYPOGRAPHY ========== */
-  /* Playfair Display - Elegant serif for headings */
-  /* Poppins - Modern, clean sans-serif for body */
   --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-heading: "Playfair Display", Georgia, serif;
 
-  /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -73,28 +108,31 @@
   --font-size-6xl: 3.75rem;
   --font-size-7xl: 4.5rem;
 
-  /* Line Heights */
   --line-height-tight: 1.1;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
 
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
+  /* ========== UNIFIED RADIUS ========== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-normal: 300ms ease;
-  --transition-slow: 500ms ease;
+  /* ========== ONE TRANSITION FOR ALL ========== */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.35s var(--ease);
+  --transition-fast: 0.2s var(--ease);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  /* ========== UNIFIED SHADOWS ========== */
+  /* Same warm-plum tint across all shadows */
+  --shadow-sm: 0 2px 8px rgba(59, 53, 64, 0.04);
+  --shadow-md: 0 4px 20px rgba(59, 53, 64, 0.07);
+  --shadow-lg: 0 12px 40px rgba(59, 53, 64, 0.10);
+  --shadow-hover: 0 16px 48px rgba(59, 53, 64, 0.13);
+  --shadow-rose: 0 8px 30px rgba(201, 146, 158, 0.25);
 
-  /* Z-Index */
+  /* ========== Z-INDEX ========== */
   --z-header: 100;
   --z-modal: 200;
   --z-overlay: 150;

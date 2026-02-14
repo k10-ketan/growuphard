@@ -1,6 +1,24 @@
+/* About — soft gradient from white → warm → rose-mist */
+
 .about {
-  background-color: var(--color-white);
+  background: var(--bg-about);
   padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating decorative circle — adds depth */
+.about::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  right: -8%;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .container {
@@ -14,14 +32,14 @@
   min-height: 80vh;
 }
 
-/* Content */
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: var(--space-3xl) var(--site-gutter);
   padding-right: var(--space-2xl);
-  background-color: var(--color-white);
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -29,31 +47,38 @@
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: var(--space-xl);
-  color: var(--color-accent);
+  color: var(--text-heading);
 }
 
 .text {
   font-size: var(--font-size-base);
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: var(--space-md);
 }
 
 .btn {
   display: inline-block;
   width: auto;
-  padding: 1rem 2.5rem;
+  padding: 0.95rem 2.4rem;
   margin-top: var(--space-xl);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-align: center;
   background-color: var(--color-primary);
   color: var(--color-white);
   border: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
 }
 
-/* Image */
+.btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-rose);
+}
+
 .imageWrapper {
   position: relative;
   overflow: hidden;
@@ -64,9 +89,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.6s var(--ease);
 }
 
-/* Responsive */
+.imageWrapper:hover .image {
+  transform: scale(1.03);
+}
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
@@ -79,5 +108,12 @@
 
   .content {
     padding: var(--space-xl) var(--mobile-gutter);
+  }
+
+  .about::before {
+    width: 80vw;
+    height: 80vw;
+    top: -20%;
+    right: -20%;
   }
 }

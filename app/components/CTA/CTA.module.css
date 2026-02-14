@@ -1,11 +1,30 @@
+/* CTA — dark gradient, natural transition into Footer (USER APPROVED ✅) */
+
 .cta {
-  background-color: var(--color-accent);
+  background: var(--gradient-dark);
   padding: 8vmax var(--site-gutter);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft rose glow — connects visually back to the rose theme */
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(201, 146, 158, 0.08) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .content {
@@ -17,7 +36,7 @@
 .title {
   font-size: clamp(2.2rem, 3.5vw, 3rem);
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--text-light);
   margin-bottom: 30px;
   line-height: 1.15;
 }
@@ -25,22 +44,29 @@
 .description {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-light-muted);
   margin-bottom: 40px;
 }
 
 .button {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.8rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
 }
 
-/* Responsive */
+.button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-rose);
+}
+
 @media (max-width: 767px) {
   .cta {
     padding: var(--space-3xl) var(--mobile-gutter);

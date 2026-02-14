@@ -1,16 +1,33 @@
 /* ==========================================
-   OUR OFFICE SECTION
-   A warm showcase of the therapy space
+   OUR OFFICE — warm-to-sand-to-rose gradient
    ========================================== */
 
 .office {
-    background-color: var(--color-bright);
-    padding: 7vmax var(--site-gutter);
+    background: var(--bg-office);
+    padding: var(--section-pad) var(--site-gutter);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative blob — bottom right */
+.office::before {
+    content: '';
+    position: absolute;
+    bottom: -12%;
+    right: -8%;
+    width: 35vw;
+    height: 35vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 65%);
+    pointer-events: none;
+    opacity: 0.45;
 }
 
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 /* ========== Header ========== */
@@ -34,14 +51,14 @@
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 400;
     line-height: 1.2;
-    color: var(--color-accent);
+    color: var(--text-heading);
     margin-bottom: var(--space-lg);
 }
 
 .description {
     font-size: var(--font-size-base);
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: 0;
 }
 
@@ -50,7 +67,7 @@
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 16px;
+    gap: 14px;
     margin-bottom: var(--space-3xl);
     min-height: 480px;
 }
@@ -60,12 +77,24 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow var(--transition);
+}
+
+.galleryMain:hover {
+    box-shadow: var(--shadow-hover);
 }
 
 .gallerySecondary {
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+}
+
+.gallerySecondary:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .galleryImage {
@@ -73,23 +102,20 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform var(--transition-slow);
+    transition: transform 0.5s var(--ease);
 }
 
-/* .galleryMain:hover .galleryImage,
+.galleryMain:hover .galleryImage,
 .gallerySecondary:hover .galleryImage {
-    transform: scale(1.04);
-} */
+    transform: scale(1.03);
+}
 
-/* Subtle overlay on hover */
 .galleryMain::after,
 .gallerySecondary::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-            transparent 60%,
-            rgba(109, 104, 117, 0.12) 100%);
+    background: linear-gradient(180deg, transparent 65%, rgba(43, 38, 51, 0.08) 100%);
     pointer-events: none;
     border-radius: var(--radius-lg);
 }
@@ -102,17 +128,22 @@
 }
 
 .card {
-    background-color: var(--color-white);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: var(--space-xl) var(--space-lg);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(216, 167, 177, 0.2);
-    transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+    border: 1px solid var(--accent-border);
+    transition: all var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
-/* .card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
-} */
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    border-color: var(--accent-border-hover);
+    background: rgba(255, 255, 255, 0.92);
+}
 
 .cardIcon {
     width: 44px;
@@ -122,32 +153,42 @@
     justify-content: center;
     border-radius: var(--radius-full);
     background-color: var(--color-primary-light);
-    color: var(--color-accent);
+    color: var(--text-heading);
     margin-bottom: var(--space-md);
+    transition: all var(--transition-fast);
+}
+
+.card:hover .cardIcon {
+    background-color: var(--color-primary);
 }
 
 .cardIcon svg {
     width: 20px;
     height: 20px;
-    stroke: var(--color-accent);
+    stroke: var(--text-heading);
     fill: none;
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: stroke var(--transition-fast);
+}
+
+.card:hover .cardIcon svg {
+    stroke: var(--color-white);
 }
 
 .cardLabel {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-lg);
     font-weight: 500;
-    color: var(--color-accent);
+    color: var(--text-heading);
     margin-bottom: 8px;
 }
 
 .cardValue {
     font-size: var(--font-size-sm);
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     margin-bottom: 0;
 }
 

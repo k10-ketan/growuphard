@@ -1,11 +1,45 @@
+/* Specialties — sand-to-warm-to-rose gradient with decorative shapes */
+
 .specialties {
-  background-color: var(--color-secondary);
-  padding: 7vmax var(--site-gutter);
+  background: var(--bg-specialties);
+  padding: var(--section-pad) var(--site-gutter);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large decorative blob — bottom left */
+.specialties::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-rose-mist-light) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Smaller accent shape — top right */
+.specialties::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-sand-deep) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .sectionTitle {
@@ -20,14 +54,27 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  background-color: var(--color-white);
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--accent-border);
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-border-hover);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .cardContent {
@@ -35,16 +82,17 @@
 }
 
 .cardTitle {
+  font-family: var(--font-family-heading);
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 15px;
-  color: var(--color-accent);
+  color: var(--text-heading);
 }
 
 .cardDescription {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: 0;
 }
 
@@ -63,6 +111,7 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .cardImage {
@@ -73,9 +122,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s var(--ease);
 }
 
-/* Responsive */
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
 @media (max-width: 1099px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
