@@ -1,6 +1,6 @@
 .specialties {
-  background-color: var(--color-white);
-  padding: 6.6vmax var(--site-gutter);
+  background-color: var(--color-secondary);
+  padding: 7vmax var(--site-gutter);
 }
 
 .container {
@@ -10,22 +10,24 @@
 
 .sectionTitle {
   text-align: center;
-  font-size: var(--font-size-base);
-  color: var(--text-primary);
-  margin-bottom: 50px;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-bottom: 60px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
+  background-color: var(--color-white);
 }
 
 .cardContent {
@@ -33,24 +35,24 @@
 }
 
 .cardTitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 10%;
-  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--color-accent);
 }
 
 .cardDescription {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 0;
 }
 
 .cardImageWrapper {
-  margin-top: 10%;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  width: 75%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }

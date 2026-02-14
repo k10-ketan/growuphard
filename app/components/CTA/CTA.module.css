@@ -1,5 +1,5 @@
 .cta {
-  background-color: var(--color-dark);
+  background-color: var(--color-accent);
   padding: 8vmax var(--site-gutter);
 }
 
@@ -25,23 +25,19 @@
 .description {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 40px;
 }
 
 .button {
   display: inline-block;
-  padding: 16px 40px;
-  background-color: var(--color-white);
-  color: var(--color-dark);
+  padding: 1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   text-decoration: none;
   font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  transition: var(--transition-base);
-}
-
-.button:hover {
-  background-color: var(--color-light);
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 /* Responsive */

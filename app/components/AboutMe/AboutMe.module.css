@@ -1,6 +1,6 @@
 .aboutMe {
-  background-color: var(--color-white);
-  padding: 6.6vmax var(--site-gutter);
+  background-color: var(--color-secondary);
+  padding: 7vmax var(--site-gutter);
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -33,9 +33,9 @@
 .archImageInner {
   width: 100%;
   position: relative;
-  padding-bottom: 150%;
+  padding-bottom: 140%;
   overflow: hidden;
-  border-radius: 50% 50% 0 0 / 33.33% 33.33% 0 0;
+  border-radius: 200px 200px 0 0;
 }
 
 .archImage {
@@ -62,6 +62,7 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+  border: 6px solid var(--color-secondary);
 }
 
 .circleImage {
@@ -81,7 +82,7 @@
 .title {
   font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--color-accent);
   margin-bottom: 30px;
   line-height: 1.15;
 }
@@ -103,17 +104,13 @@
 
 .button {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 1rem 2.5rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  transition: var(--transition-base);
-}
-
-.button:hover {
-  background-color: var(--color-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 /* Responsive */

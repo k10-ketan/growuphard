@@ -1,5 +1,6 @@
 /* ==========================================
-   LILAC TEMPLATE - BASE STYLES
+   BASE STYLES
+   Professional, clean styling
    ========================================== */
 
 @import "./variables.css";
@@ -24,7 +25,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--text-primary);
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
 }
 
 /* Typography */
@@ -33,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-md);
+  color: var(--color-accent);
 }
 
 h1 {
@@ -61,11 +63,6 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-a:hover {
-  opacity: 0.7;
 }
 
 ul, ol {
@@ -152,55 +149,34 @@ button {
   color: var(--text-light);
 }
 
-/* Button Styles */
+/* Button Styles - Clean, Professional */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   font-size: var(--font-size-sm);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: var(--transition-normal);
+  font-weight: 500;
+  letter-spacing: 0.08em;
   min-width: 180px;
 }
 
 .btn--primary {
-  border: 1px solid var(--text-primary);
-  background-color: transparent;
-  color: var(--text-primary);
-}
-
-.btn--primary:hover {
-  background-color: var(--text-primary);
+  background-color: var(--color-primary);
   color: var(--color-white);
-  opacity: 1;
+  border: none;
 }
 
 .btn--secondary {
-  border: 1px solid var(--text-primary);
   background-color: transparent;
-  color: var(--text-primary);
-  width: 100%;
-}
-
-.btn--secondary:hover {
-  background-color: var(--text-primary);
-  color: var(--color-white);
-  opacity: 1;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 
 .btn--light {
-  border: 1px solid var(--color-white);
-  background-color: transparent;
-  color: var(--color-white);
-}
-
-.btn--light:hover {
   background-color: var(--color-white);
-  color: var(--text-primary);
-  opacity: 1;
+  color: var(--color-accent);
+  border: none;
 }
 
 /* Image Masks */

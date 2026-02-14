@@ -1,6 +1,6 @@
 .support {
-  background-color: var(--color-light);
-  padding: 6.6vmax var(--site-gutter);
+  background-color: var(--color-primary);
+  padding: 7vmax var(--site-gutter);
 }
 
 .container {
@@ -11,26 +11,26 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 80px;
   align-items: center;
 }
 
 .content {
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .title {
-  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--color-white);
   margin-bottom: 30px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .intro {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 30px;
 }
 
@@ -42,18 +42,22 @@
 
 .listItem {
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 15px;
+  padding-left: 20px;
+  margin-bottom: 14px;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .listItem::before {
-  content: '—';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--text-primary);
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-white);
+  border-radius: 50%;
 }
 
 .imageWrapper {
@@ -63,9 +67,10 @@
 
 .imageInner {
   width: 100%;
-  padding-bottom: 125%;
+  padding-bottom: 120%;
   position: relative;
   overflow: hidden;
+  border-radius: 200px 200px 0 0;
 }
 
 .image {

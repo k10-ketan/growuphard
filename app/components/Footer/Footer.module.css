@@ -1,7 +1,7 @@
 .footer {
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
   padding: 80px var(--site-gutter) 40px;
-  border-top: 1px solid rgba(92, 74, 61, 0.1);
+  border-top: 1px solid rgba(109, 104, 117, 0.1);
 }
 
 .container {
@@ -23,8 +23,8 @@
 
 .columnTitle {
   font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--text-primary);
+  font-weight: 500;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 20px;
@@ -53,11 +53,6 @@
   font-size: 0.95rem;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: var(--transition-base);
-}
-
-.link:hover {
-  color: var(--text-primary);
 }
 
 .hours p {
@@ -74,16 +69,11 @@
   font-size: 0.95rem;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: var(--transition-base);
-}
-
-.navLink:hover {
-  color: var(--text-primary);
 }
 
 .bottom {
   padding-top: 30px;
-  border-top: 1px solid rgba(92, 74, 61, 0.1);
+  border-top: 1px solid rgba(109, 104, 117, 0.1);
   text-align: center;
 }
 
