@@ -6,6 +6,7 @@ import Support from './components/Support/Support';
 import AboutMe from './components/AboutMe/AboutMe';
 import FAQ from './components/FAQ/FAQ';
 import Background from './components/Background/Background';
+import OurOffice from './components/OurOffice/OurOffice';
 import CTA from './components/CTA/CTA';
 import Footer from './components/Footer/Footer';
 
@@ -21,6 +22,7 @@ export default function Home() {
         <AboutMe />
         <FAQ />
         <Background />
+        <OurOffice />
         <CTA />
       </main>
       <Footer />

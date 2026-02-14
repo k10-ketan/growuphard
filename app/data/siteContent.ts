@@ -172,6 +172,41 @@ export const ctaSection = {
   buttonLink: "#contact",
 };
 
+export const ourOffice = {
+  title: "A Calm Space for Healing",
+  description:
+    "My office in Santa Monica is designed to feel like a refuge—quiet, warm, and grounding. With soft natural light, comfortable seating, and a private, welcoming atmosphere, every detail is intentional so you can feel safe and at ease from the moment you walk in.",
+  details: [
+    {
+      label: "Location",
+      value: "123th Street 45 W, Santa Monica, CA 90401",
+    },
+    {
+      label: "Session Format",
+      value: "In-person & secure telehealth available",
+    },
+    {
+      label: "Your Privacy Matters",
+      value:
+        "A completely private, soundproofed space—your comfort and confidentiality are always protected.",
+    },
+  ],
+  images: [
+    {
+      src: "/grow/faq.webp",
+      alt: "Cozy therapy office with warm lighting",
+    },
+    {
+      src: "/grow/therapist.jpg",
+      alt: "Comfortable seating area in the counseling space",
+    },
+    {
+      src: "/grow/2 main.jpg",
+      alt: "Calm, natural-light-filled office environment",
+    },
+  ],
+};
+
 export const navigation = {
   mainLinks: [
     { label: "About", href: "#about" },
