@@ -9,37 +9,41 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerInner}>
-        {/* Logo */}
-        <div className={styles.logo}>
-          <Link href="/">{siteInfo.name}</Link>
+    <>
+      <header className={styles.header}>
+        <div className={styles.headerInner}>
+          {/* Logo */}
+          <div className={styles.logo}>
+            <Link href="/">{siteInfo.name}</Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className={styles.nav}>
+            <ul className={styles.navList}>
+              {navigation.mainLinks.map((link) => (
+                <li key={link.label} className={styles.navItem}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close Menu" : "Open Menu"}
+          >
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+          </button>
         </div>
+      </header>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.nav}>
-          <ul className={styles.navList}>
-            {navigation.mainLinks.map((link) => (
-              <li key={link.label} className={styles.navItem}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-        >
-          <span className={styles.burgerLine}></span>
-          <span className={styles.burgerLine}></span>
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
+      {/* Mobile Slide-Down Menu */}
+      <div
+        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
+      >
         <nav className={styles.mobileNav}>
           <ul className={styles.mobileNavList}>
             {navigation.mainLinks.map((link) => (
@@ -52,7 +56,13 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-    </header>
+
+      {/* Backdrop */}
+      <div
+        className={`${styles.backdrop} ${menuOpen ? styles.backdropVisible : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
+    </>
   );
 };
 
