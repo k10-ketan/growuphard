@@ -5,7 +5,8 @@ const Specialties = () => {
   return (
     <section id="services" className={styles.specialties}>
       <div className={styles.container}>
-        <p className={styles.sectionTitle}>My Specialties</p>
+        {/* <p className={styles.sectionTitle}>My Specialties</p> */}
+        <h1 className="flex items-center justify-center h-screen" >My Specialties</h1>
 
         <div className={styles.grid}>
           {specialties.map((specialty) => (

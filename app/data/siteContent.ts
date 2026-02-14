@@ -35,7 +35,7 @@ export const heroContent = {
   subtitle: "Therapy for adults navigating anxiety, trauma, and burnout in Santa Monica, CA.",
   ctaText: "Book an Appointment",
   ctaLink: "#contact",
-  image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80",
+  image: "/grow/maybeone.webp",
   imageAlt: "Peaceful therapy environment",
 };
 
@@ -47,7 +47,7 @@ export const aboutSection = {
   ],
   ctaText: "Get in Touch",
   ctaLink: "#contact",
-  image: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=800&q=80",
+  image: "/grow/2 main.jpg",
   imageAlt: "Calm therapeutic setting",
 };
 
@@ -57,21 +57,21 @@ export const specialties = [
     title: "Anxiety & Panic",
     description:
       "Whether it's constant worry, tension in your body, or difficulty sleeping—I help clients understand both the emotional and physiological sides of anxiety.",
-    image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=80",
+    image: "/grow/aaa.jpg",
   },
   {
     id: 2,
     title: "Trauma & PTSD",
     description:
       "I work with adults who have experienced single-incident trauma as well as more complex patterns stemming from childhood, relationships, or chronic stress.",
-    image: "https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=600&q=80",
+    image: "/grow/TRAUMA.jpg",
   },
   {
     id: 3,
     title: "Burnout & Perfectionism",
     description:
       "Many clients are entrepreneurs, creatives, or professionals who feel disconnected from themselves after years of pushing through stress.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
+    image: "/grow/BURNOUT.jpg",
   },
 ];
 
@@ -102,9 +102,9 @@ export const aboutMe = {
   ],
   ctaText: "Learn More About My Approach",
   ctaLink: "#services",
-  mainImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+  mainImage: "/grow/Dr. Maya Reynolds.png",
   mainImageAlt: "Dr. Maya Reynolds",
-  decorImage: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&q=80",
+  decorImage: "/grow/therapist.jpg",
   decorImageAlt: "Therapeutic texture",
 };
 

@@ -19,7 +19,7 @@ export default function FAQ() {
             <h2 className={styles.title}>Frequently Asked Questions</h2>
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80"
+                src="/grow/faq.webp"
                 alt="Cozy therapy space"
                 className={styles.image}
                 loading="lazy"
