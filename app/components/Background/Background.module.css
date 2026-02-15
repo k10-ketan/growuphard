@@ -1,7 +1,7 @@
 /* Background — sand-to-deep-to-rose gradient with decorative shape */
 
 .background {
-  background: var(--bg-background);
+  /* background handled by main canvas */
   padding: var(--section-pad) var(--site-gutter);
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 65%);
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.55;
 }
 
 .container {

@@ -67,13 +67,23 @@
   --gradient-rose: linear-gradient(145deg, #C9929E 0%, #B07D88 40%, #7A6A76 100%);
   --gradient-dark: linear-gradient(168deg, #5B5662 0%, #3A3540 50%, #2B2633 100%);
 
-  /* Section-specific gradients — same family, unique combos */
-  --bg-about: linear-gradient(175deg, #ffffff 0%, #FAF6F0 60%, #F7ECF0 100%);
-  --bg-specialties: linear-gradient(160deg, #F4EEE5 0%, #FAF6F0 40%, #F2E4E8 100%);
-  --bg-aboutme: linear-gradient(170deg, #FAF6F0 0%, #EDE6DB 50%, #F7ECF0 100%);
-  --bg-faq: linear-gradient(165deg, #ffffff 0%, #FAF6F0 55%, #F4EEE5 100%);
-  --bg-background: linear-gradient(155deg, #F4EEE5 0%, #EDE6DB 45%, #F2E4E8 100%);
-  --bg-office: linear-gradient(172deg, #FAF6F0 0%, #F4EEE5 40%, #EDDADF 100%);
+  /* ONE continuous background for <main> — no seams between sections */
+  --bg-main-canvas: linear-gradient(180deg,
+      #FAF6F0 0%,
+      /* Warm Linen — starts at Hero */
+      #F4EEE5 18%,
+      /* Sand — About/Specialties zone */
+      #FAF6F0 35%,
+      /* Back to warm — after Support accent */
+      #EDE6DB 55%,
+      /* Deeper sand — middle of page */
+      #F7ECF0 72%,
+      /* Soft rose mist — FAQ/Background zone */
+      #F4EEE5 85%,
+      /* Sand — OurOffice zone */
+      #EDDADF 100%
+      /* Rose tint — leads into CTA dark */
+    );
 
   /* ========== SPACING ========== */
   --space-xs: 0.5rem;

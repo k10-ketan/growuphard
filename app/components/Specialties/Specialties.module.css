@@ -1,7 +1,7 @@
 /* Specialties — sand-to-warm-to-rose gradient with decorative shapes */
 
 .specialties {
-  background: var(--bg-specialties);
+  /* background handled by main canvas */
   padding: var(--section-pad) var(--site-gutter);
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-rose-mist-light) 0%, transparent 65%);
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Smaller accent shape — top right */
@@ -32,7 +32,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-sand-deep) 0%, transparent 60%);
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.55;
 }
 
 .container {

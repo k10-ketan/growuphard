@@ -1,7 +1,7 @@
 /* FAQ — white-to-warm-to-sand gradient with decorative shape */
 
 .faq {
-  background: var(--bg-faq);
+  /* background handled by main canvas */
   padding: var(--section-pad) var(--site-gutter);
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-rose-mist-light) 0%, transparent 65%);
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 .container {

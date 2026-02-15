@@ -1,7 +1,7 @@
 /* AboutMe — warm-to-sand-to-rose gradient with decorative shape */
 
 .aboutMe {
-  background: var(--bg-aboutme);
+  /* background handled by main canvas */
   padding: var(--section-pad) var(--site-gutter);
   overflow: hidden;
   position: relative;
@@ -18,7 +18,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-rose-mist) 0%, transparent 65%);
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 .container {
